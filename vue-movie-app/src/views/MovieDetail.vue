@@ -1,7 +1,7 @@
 <template>
   <div class="movie-detail">
     <div class="movie-mainInfo">
-      <h2>{{movie.Title}}</h2>
+      <h2>{{ movie.Title }}</h2>
       <div class="movie-mainInfo__container">
         <p>{{ movie.Year }}</p>
         <p>{{ movie.Genre }}</p>
