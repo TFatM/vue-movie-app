@@ -220,7 +220,14 @@ export default defineComponent({
         width: 50px;
         margin: 0;
         background-color: var(--color-brand-lightBlue);
+      }
+
+      .carousel__prev{
         border-radius: 0px 50% 50% 0px;
+      }
+
+      .carousel__next{
+        border-radius: 50% 0px 0px 50%;
       }
     }
 
@@ -250,7 +257,9 @@ export default defineComponent({
         background-color: rgba(0, 0, 0, 0.5);
         padding: 16px;
         z-index: 1;
-        
+        height: 300px;
+        transform: translateY(220px);
+        transition: transform .2s, height .2s;
 
         h3 {
           text-transform: uppercase;
@@ -260,9 +269,36 @@ export default defineComponent({
 
         p {
           color: var(--color-brand-white);
+          transform: translateY(10%);
         }
       }
     }
+    
+
+    .feature-card .detail:hover{
+        overflow-y: scroll;
+        transform: translateY(0%);
+        transition: transform .2s, height .2s;
+        
+&::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+&::-webkit-scrollbar-track {
+  background: var(--color-brand-winterWhite);
+}
+
+/* Handle */
+&::-webkit-scrollbar-thumb {
+  background: var(--color-brand-green);
+}
+
+/* Handle on hover */
+&::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-green);
+}
+        }
 
     .search-box{
       display: flex;

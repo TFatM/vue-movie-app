@@ -8,14 +8,26 @@
   <main>
     <router-view />
   </main>
+  <footer>
+      <h2>Pet project by <span>TFM</span></h2>
+      <a :href="githubLink">GitHub</a>
+  </footer>
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+
+const githubLink = "https://github.com/TFatM";
 </script>
 
 
 <style lang="scss">
+
+@font-face {
+    font-family: MPlusRounded;
+    src: url('./assets/fonts/MPLUSRounded1c-Regular.ttf') format('truetype');
+  }
+
    :root{
   --color-brand-black: #1B262C;
   --color-brand-darkBlue: #0F4C75;
@@ -30,7 +42,7 @@ import { RouterLink, RouterView } from 'vue-router'
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: MPlusRounded;
 
     &::selection{
       background: transparentize(#42B883, 0.5);
@@ -64,6 +76,31 @@ import { RouterLink, RouterView } from 'vue-router'
 
     span{
       color: var(--color-brand-green);
+    }
+
+    footer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 8px;
+      gap: 8px;
+
+      h2{
+        color: var(--color-brand-winterWhite);
+        font-size: 18px;
+        letter-spacing: 0.8px
+      }
+
+      a{
+        color: var(--color-brand-winterWhite);
+        text-decoration: underline;
+        transition: .3s;
+
+        &:hover{
+          color: var(--color-brand-black);
+        }
+      }
     }
   }
 </style>
